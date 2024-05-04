@@ -3,7 +3,7 @@ const Reply = require("../Models/replyModel");
 const Post = require("../Models/postModel");
 const { Error } = require("mongoose");
 
-const postReply = async (req, res) => {
+const postReply = async (req, res) => { 
   let { id } = req.params;
   try {
     let post = await Post.findById(id);
