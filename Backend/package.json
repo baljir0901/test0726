@@ -2,9 +2,9 @@
   "name": "threadsapp",
   "version": "1.0.0",
   "description": "",
-  "main": "Backend/server.js",
+  "main": "./server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
