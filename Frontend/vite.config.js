@@ -8,7 +8,7 @@ export default defineConfig({
 		port: 3000,
 		proxy: {
 			"/api": {
-				target: "https://threads-one-flame.vercel.app",
+				target: "https://verceltest-plum-six.vercel.app",
 				changeOrigin: true,
 				secure: false,
 			},
