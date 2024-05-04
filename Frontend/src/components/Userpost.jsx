@@ -64,37 +64,37 @@ if (loading) {
 else{
   
   return timeline?.map((post) => (
-    <VStack align="stretch" spacing={1} key={post._id}>
+    <VStack align="stretch" spacing={1} key={post?._id}>
       <div className="flex items-center justify-between px-2 py-4">
-        <Link to={`/user/${post.author._id}`}>
+        <Link to={`/user/${post?.author?._id}`}>
           <div className="flex items-center">
             <img
-              src={post.author.pfp ? post.author.pfp : "/nopfp.jpeg"}
+              src={post?.author?.pfp ? post?.author?.pfp : "/nopfp.jpeg"}
               alt=""
               className="size-10 rounded-full object-cover"
             />
             <div className="pl-4">
               <div className="flex items-center">
-                <div className="font-bold">{post.author.name}</div>
+                <div className="font-bold">{post?.author?.name}</div>
                 <div className="time text-sm text-zinc-500 pl-2">
-                  {formatCreatedAt(post.createdAt)}
+                  {formatCreatedAt(post?.createdAt)}
                 </div>
               </div>
             </div>
           </div>
         </Link>
 
-        {currUser && <PostMenu id={post._id} currUser={currUser} />}
+        {currUser && <PostMenu id={post?._id} currUser={currUser} />}
       </div>
       <div className="flex">
         <div className="border  ml-7 rounded-lg"></div>
         <div className="px-12">
           <Link
-            to={`${post.author.username}/post/${post._id}`}
+            to={`${post?.author?.username}/post/${post?._id}`}
             className="cursor-pointer"
           >
-            <div className="txt pb-3 max-w-80 text-sm">{post.posttext}</div>
-            {post.postImage && (
+            <div className="txt pb-3 max-w-80 text-sm">{post?.posttext}</div>
+            {post?.postImage && (
               <img
                 src={post?.postImage}
                 alt="post"
@@ -120,11 +120,11 @@ else{
         </div>
         <div className="left flex gap-2 items-center px-10">
           <div className="font-normal  text-zinc-500 cursor-pointer">
-            {post.replies.length} replies
+            {post?.replies?.length} replies
           </div>
           <div className="font-normal  text-zinc-500">.</div>
           <div className="instalink font-normal text-zinc-500 cursor-pointer">
-            {post.likes.length} likes
+            {post?.likes?.length} likes
           </div>
         </div>
       </div>
