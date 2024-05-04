@@ -1,5 +1,5 @@
 const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const { RemoteStorage } = require ('multer-remote-storage');
 require('dotenv').config();
 
 cloudinary.config({
@@ -8,13 +8,11 @@ cloudinary.config({
     api_secret: process.env.API_SECRET
 })
 
-const storage = new CloudinaryStorage({
-    cloudinary: cloudinary,
+const storage = new RemoteStorage({
+    client:cloudinary,
     params: {
-        folder: 'threadPosts',
-        allowedFormats: ['png', 'jpg', 'jpeg']
-
-    },
+        folder:'threads'
+    }
 });
 
 module.exports = {
