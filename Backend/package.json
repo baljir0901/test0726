@@ -4,7 +4,8 @@
   "description": "",
   "main": "Backend/server.js",
   "scripts": {
-   "start":"nodemon server.js"
+   "start":"nodemon server.js",
+   "preinstall": "npm install --force"
   },
 
   "keywords": [],
