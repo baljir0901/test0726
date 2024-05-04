@@ -30,6 +30,10 @@ app.use(userRouter);
 app.use(postRouter);
 app.use(replyRouter);
 
+app.get('/', (req,res)=>{
+  res.send("running...")
+})
+
 // if(process.env.NODE_ENV === "production") {
 //   app.use(express.static(path.join(__dirname1, "/Frontend/dist")));
 
