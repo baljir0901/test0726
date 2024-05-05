@@ -14,7 +14,7 @@ const [loading, setLoading]=useState(true);
     const fetchData = async () => {
       try {
         let response = await axios({
-          url: "/api/v1/timeline",
+          url: "https://threads-api-rho.vercel.app/api/v1/timeline",
           method: "get",
         });
         setTimeline(response.data);
