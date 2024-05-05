@@ -28,8 +28,18 @@ app.use(express.static("public"));
  
 
 
-app.get('/', (req,res)=>{
-  res.send("running...")
+app.get('/', async(req,res)=>{
+  try {
+    let AllPosts = await Post.find({}).sort({createdAt: -1}).populate('author');
+    if (AllPosts.length == 0) {
+      return res.status(400).json({ error: "no Posts yet" });
+    }
+    return res.status(200).json(AllPosts);
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ error: error.message });
+  }
+  
 })
 
 
