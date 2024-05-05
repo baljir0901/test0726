@@ -21,7 +21,7 @@ const userRouter = require("./Routes/userRoutes");
 const postRouter = require("./Routes/postRoutes");
 const replyRouter = require("./Routes/replyRoute");
 
- app.use(cors())
+app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
