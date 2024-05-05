@@ -16,7 +16,7 @@ const {colorMode}=useColorMode()
   const handleFollowUnfollow = async () => {
     try {
       let response = await axios({
-        url: `/api/v1/follow/${id}`,
+        url: `https://threads-api-rho.vercel.app/api/v1/follow/${id}`,
         method: "post",
       });
 

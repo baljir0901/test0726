@@ -60,7 +60,7 @@ const handleRemovePfp=()=>{
     try {
       const fetchUser = async () => {
         const response = await axios({
-          url: `/api/v1/user/${userid}`,
+          url: `https://threads-api-rho.vercel.app/api/v1/user/${userid}`,
           method: "get",
         });
         setUser(response?.data);
@@ -84,7 +84,7 @@ setIsLoading(true)
       formData.append('email', data.email);
       formData.append('bio', data.bio);
       formData.append('password', data.password);
-      const response = await axios.put(`/api/v1/user/${userid}`, formData, {
+      const response = await axios.put(`https://threads-api-rho.vercel.app/api/v1/user/${userid}`, formData, {
         headers: {
          'Content-Type': 'multipart/form-data'
         },        

@@ -34,7 +34,7 @@ const Header = () => {
   const logout = async () => {
     try {
       const response = await axios({
-        url: "/api/v1/logout",
+        url: "https://threads-api-rho.vercel.app/api/v1/logout",
         method: 'post',
       });
       localStorage.removeItem('currUser');
