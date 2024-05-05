@@ -22,7 +22,7 @@ const onsubmit= async(data)=>{
 try {
   setIsLoading(true)
   let response=await axios({
-    url:'/api/v1/login',
+    url:'https://threads-api-rho.vercel.app/api/v1/login',
     method:'post',
     headers:{
       'Content-Type':'application/json'

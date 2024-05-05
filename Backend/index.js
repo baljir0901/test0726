@@ -13,12 +13,15 @@ mongoose
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
   });
+  const cors= require ('cors');
+ 
 
 const cookieParser = require("cookie-parser");
 const userRouter = require("./Routes/userRoutes");
 const postRouter = require("./Routes/postRoutes");
 const replyRouter = require("./Routes/replyRoute");
 
+ app.use(cors())
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
