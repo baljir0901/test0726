@@ -14,6 +14,8 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
+  const Post = require("./Models/postModel");
+
 const cookieParser = require("cookie-parser");
 const userRouter = require("./Routes/userRoutes");
 const postRouter = require("./Routes/postRoutes");
@@ -30,6 +32,19 @@ app.get('/', (req,res)=>{
   res.send("running...")
 })
 
+
+app.get('/api/v1/timeline',async(req,res)=>{
+  try {
+    let AllPosts = await Post.find({}).sort({createdAt: -1}).populate('author');
+    if (AllPosts.length == 0) {
+      return res.status(400).json({ error: "no Posts yet" });
+    }
+    return res.status(200).json(AllPosts);
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ error: error.message });
+  }
+})
 
 app.use(userRouter);
 app.use(postRouter);
