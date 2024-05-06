@@ -18,7 +18,7 @@ const SearchBar = () => {
     try {
       let username = data.query;
       let response = await axios({
-        url: `https://threads-api-rho.vercel.app/api/v1/user/${username}`,
+        url: `/api/v1/user/${username}`,
         method: 'get'
       });
       setUser(response?.data);

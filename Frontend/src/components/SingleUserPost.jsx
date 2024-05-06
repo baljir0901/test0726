@@ -14,7 +14,7 @@ const SingleUserPost = ({user, currUser}) => {
         const fetchData = async () => {
           if (user && user.username) {
             try {
-              const response = await axios.get(`https://threads-api-rho.vercel.app/api/v1/post/user/${user.username}`);
+              const response = await axios.get(`/api/v1/post/user/${user.username}`);
               setUserPost(response.data);
             } catch (error) {
               console.error("Error fetching user posts:", error);

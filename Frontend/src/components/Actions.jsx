@@ -49,7 +49,7 @@ const Actions = ({ id, likes, currentUser }) => {
   const likePost = async () => {
     try {
       let response = await axios({
-        url: `https://threads-api-rho.vercel.app/api/v1/like/${id}`,
+        url: `/api/v1/like/${id}`,
         method: "post",
       });
       // Update the like count and isLiked state
@@ -75,7 +75,7 @@ const Actions = ({ id, likes, currentUser }) => {
     try {
       setIsLoading(true);
       let response = await axios({
-        url: `https://threads-api-rho.vercel.app/api/v1/reply/${id}`,
+        url: `/api/v1/reply/${id}`,
         method: "post",
         headers: {
           "Content-Type": "application/json",

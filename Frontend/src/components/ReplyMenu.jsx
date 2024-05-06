@@ -15,7 +15,7 @@ const ReplyMenu = ({ replyinguserid, postid, replyid, currUser}) => {
     try {
       
       const response = await axios({
-        url: `https://threads-api-rho.vercel.app/api/v1/post/${postid}/reply/${replyid}`,
+        url: `/api/v1/post/${postid}/reply/${replyid}`,
         method: "delete",
       });
       toast({
