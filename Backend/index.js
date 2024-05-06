@@ -20,7 +20,12 @@ const userRouter = require("./Routes/userRoutes");
 const postRouter = require("./Routes/postRoutes");
 const replyRouter = require("./Routes/replyRoute");
 
-app.use(cors({ credentials: true, origin: true }));
+const corsOptions = {
+  origin:"https://threads-eosin-nu.vercel.app",
+  credentials:true
+}
+
+app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
