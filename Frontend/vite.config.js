@@ -6,7 +6,6 @@ export default defineConfig({
   server:{
     '/api': {
       target: 'https://threads-api-rho.vercel.app',
-      changeOrigin: true,
     },
   },
   plugins: [react()],
