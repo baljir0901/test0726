@@ -39,7 +39,7 @@ const PostMenu = ({ id, currUser }) => {
     try {
       setIsLoading(true);
       const response = await axios({
-        url: `/api/v1/post/${id}`,
+        url: `https://threads-api-rho.vercel.app/api/v1/post/${id}`,
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const PostMenu = ({ id, currUser }) => {
     (async () => {
       try {
         const response = await axios({
-          url: `/api/v1/post/${id}`,
+          url: `https://threads-api-rho.vercel.app/api/v1/post/${id}`,
           method: "get",
           headers: {
             "Content-Type": "application/json",
@@ -89,7 +89,7 @@ const PostMenu = ({ id, currUser }) => {
   const handleDelete = async () => {
     try {
       const response = await axios({
-        url: `/api/v1/post/${id}`,
+        url: `https://threads-api-rho.vercel.app/api/v1/post/${id}`,
         method: "delete",
       });
       toast({

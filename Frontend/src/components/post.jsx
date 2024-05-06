@@ -14,7 +14,7 @@ const Post = ({currUser}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/v1/post/${postid}`);
+        const response = await axios.get(`https://threads-api-rho.vercel.app/api/v1/post/${postid}`);
         setPostData(response.data);
       } catch (error) {
         console.error('Error fetching post data:', error);

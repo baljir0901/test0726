@@ -14,7 +14,7 @@ const Userpage = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`/api/v1/user/${id}`);
+        const response = await axios.get(`https://threads-api-rho.vercel.app/api/v1/user/${id}`);
         setUser(response.data);
         setLoading(false);
       } catch (error) {

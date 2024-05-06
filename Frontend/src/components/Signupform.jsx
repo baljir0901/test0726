@@ -41,7 +41,7 @@ const Signupform = () => {
     try {
       setIsLoading(true)
       let response = await axios({
-        url: "/api/v1/signup",
+        url: "https://threads-api-rho.vercel.app/api/v1/signup",
         method: "post",
         headers: {
           "Content-Type": "application/json",
