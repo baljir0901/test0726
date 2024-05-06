@@ -75,7 +75,7 @@ const Actions = ({ id, likes, currentUser }) => {
     try {
       setIsLoading(true);
       let response = await axios({
-        url: `/api/v1/reply/${id}`,
+        url: `https://threads-api-rho.vercel.app/api/v1/reply/${id}`,
         method: "post",
         headers: {
           "Content-Type": "application/json",
