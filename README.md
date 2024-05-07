@@ -1,7 +1,7 @@
 # Threads Mern Stack Clone
 
 
-![App SS](/app.png)
+![App SS](Frontend/public/app.png)
 
 [Demo App](https://youtu.be/ymA_R7lbrWs)
 
