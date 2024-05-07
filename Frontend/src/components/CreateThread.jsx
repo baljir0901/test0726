@@ -34,7 +34,7 @@ const CreateThread = ({ pfp, id }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`https://threads-api-rho.vercel.app/api/v1/user/${id}`);
+        const response = await axios.get(`/api/v1/user/${id}`);
         setCurrUser(response.data);
       } catch (error) {
         console.error("Error fetching user:", error);
@@ -62,7 +62,7 @@ const CreateThread = ({ pfp, id }) => {
       formData.append("posttext", data.posttext);
       formData.append("postImage", imagefile);
       setIsLoading(true);
-      const response = await axios.post("https://threads-api-rho.vercel.app/api/v1/post/create", formData, {
+      const response = await axios.post("/api/v1/post/create", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

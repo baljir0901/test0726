@@ -11,7 +11,7 @@ const AllUsers = () => {
     const fetchUserData = async () => {
       try {
         let response = await axios({
-          url: 'https://threads-api-rho.vercel.app/api/v1/users',
+          url: '/api/v1/users',
           method: 'get'
         })
         setAllUsers(response.data)
