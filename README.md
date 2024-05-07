@@ -1,15 +1,15 @@
-# Threads Mern Stack Clone
+# Threads WebApp Clone
 
 
 ![App SS](Frontend/public/app.png)
 
-[Demo App Link](https://youtu.be/ymA_R7lbrWs) 👈 Click here
+[👁App Demo:](https://youtu.be/ymA_R7lbrWs) 👈 Click here
 
 
 
 Feature List:
 
--   🌟 Tech stack: MERN + Socket.io + Chakra UI
+-   🌟 Tech stack: MERN + Chakra UI
 -   🎃 Authentication & Authorization with JWT
 -   📝 Create Post
 -   🗑️ Delete Post
