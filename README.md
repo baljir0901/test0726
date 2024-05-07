@@ -3,9 +3,8 @@
 
 ![App SS](Frontend/public/app.png)
 
-[Demo App](https://youtu.be/ymA_R7lbrWs)
+[Demo App Link](https://youtu.be/ymA_R7lbrWs) 👈 Click here
 
-[![Video](https://img.youtube.com/vi/ymA_R7lbrWs/0.jpg)](https://www.youtube.com/watch?v=ymA_R7lbrWs)
 
 Feature List:
 
