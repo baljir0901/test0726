@@ -1,43 +1,57 @@
-# Production Environment Variables for Vercel
+# Bodol.space Deployment Guide
 
-## Backend Environment Variables
+## Required Environment Variables
 
-```bash
+### Backend (.env file)
+
+Create a `.env` file in the Backend directory with:
+
+```env
+# Server Configuration
 PORT=5555
-MONGO_ATLAS_URI=mongodb+srv://bodol0726:bodol0726@thread.def4de8.mongodb.net/?retryWrites=true&w=majority&appName=Thread
-JWT_SECRET=Ajd98hsd81h81jdhSAdjas@12$##@TSD
-CLOUD_NAME=dvld1u0hx
-CLOUD_API_KEY=427387557525345
-API_SECRET=GknKM1Xa1DXqqy3qnXthGHZPy8c
+NODE_ENV=production
+
+# Database
+MONGO_ATLAS_URI=your-mongodb-connection-string
+
+# Authentication
+JWT_SECRET=your-secure-jwt-secret
+
+# File Upload (Cloudinary)
+CLOUD_NAME=your-cloudinary-name
+CLOUD_API_KEY=your-cloudinary-api-key
+API_SECRET=your-cloudinary-api-secret
 ```
 
-## Frontend Environment Variables (if needed)
+### Frontend (.env file)
 
-```bash
-VITE_API_URL=https://your-backend-url.vercel.app
+Create a `.env` file in the Frontend directory with:
+
+```env
+# Backend API URL
+VITE_API_URL=https://your-backend-deployment-url.vercel.app
+
+# App Configuration
+VITE_APP_NAME=bodol.space
+VITE_APP_DESCRIPTION=Mongolian Social Media Platform
 ```
 
-## Vercel Deployment Steps
+## Deployment Steps
 
-### Backend Deployment:
+1. **Backend Deployment:**
 
-1. Create new Vercel project
-2. Connect to GitHub repository
-3. Set root directory to `Backend`
-4. Add environment variables in Vercel dashboard
-5. Deploy
+   - Deploy to Vercel
+   - Set environment variables in Vercel dashboard
+   - Copy the deployment URL
 
-### Frontend Deployment:
+2. **Frontend Deployment:**
+   - Deploy to Vercel
+   - Set VITE_API_URL to backend URL
+   - Deploy
 
-1. Create another Vercel project
-2. Connect to same GitHub repository
-3. Set root directory to `Frontend`
-4. Update API URLs to production backend
-5. Deploy
+## Security Notes
 
-## Important Notes:
-
-- Backend will be deployed as serverless functions
-- Frontend will be deployed as static site
-- Update CORS settings for production domains
-- Test all API endpoints after deployment
+- Never commit .env files to Git
+- Keep all sensitive credentials secure
+- Use strong passwords and secrets
+- Set environment variables only in deployment platform
