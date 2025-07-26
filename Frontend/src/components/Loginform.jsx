@@ -4,7 +4,7 @@ import * as yup from 'yup'
 import {FormControl, FormLabel,Input,InputGroup,InputRightElement, Stack,Button, useColorModeValue, useToast} from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { yupResolver } from '@hookform/resolvers/yup'
-import axios from 'axios'
+import api from '../utils/api'
 import {useNavigate} from 'react-router-dom'
 const Loginform = () => {
   const toast=useToast();
@@ -21,7 +21,7 @@ const Loginform = () => {
 const onsubmit= async(data)=>{
 try {
   setIsLoading(true)
-  let response=await axios({
+  let response=await api({
     url:'/api/v1/login',
     method:'post',
     headers:{
