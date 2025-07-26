@@ -1,14 +1,21 @@
 {
-  "name": "threadsapp",
+  "name": "bodol-space-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bodol.space backend API - Mongolian social media platform",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "social-media",
+    "mongolian",
+    "api",
+    "express",
+    "mongodb"
+  ],
+  "author": "HmadAfzal <baljir0901@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

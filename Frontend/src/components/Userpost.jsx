@@ -108,13 +108,13 @@ else{
       <div className="flex items-center ">
         <div className="avts">
           <Avatar
-            name="Dan Abrahmov"
-            src="https://bit.ly/dan-abramov"
+            name="Хэрэглэгч 1"
+            src="/nopfp.jpeg"
             size="xs"
           />
           <Avatar
-            name="Christian Nwamba"
-            src="https://bit.ly/code-beast"
+            name="Хэрэглэгч 2"
+            src="/nopfp.jpeg"
             size="xs"
           />
         </div>

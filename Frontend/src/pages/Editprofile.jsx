@@ -40,10 +40,10 @@ const handleRemovePfp=()=>{
 }
 
   const Schema = yup.object().shape({
-    name: yup.string().required("Name is required"),
-    username: yup.string().required("UserName is required"),
-    email: yup.string().email().required(),
-    password: yup.string().min(6).required("Min length is 8"),
+    name: yup.string().required("Нэр шаардлагатай"),
+    username: yup.string().required("Хэрэглэгчийн нэр шаардлагатай"),
+    email: yup.string().email("Имэйл хаяг буруу байна").required("Имэйл хаяг шаардлагатай"),
+    password: yup.string().min(6).required("Хамгийн багадаа 6 тэмдэгт"),
     bio: yup.string(),
   });
   const {
@@ -137,12 +137,12 @@ setIsLoading(true)
                <button
                 className={` ${colorMode == 'dark' ? 'bg-white text-black hover:bg-neutral-300' : 'bg-neutral-900 text-white hover:bg-zinc-800'} w-[45%]  py-2 my-2 rounded-lg font-semibold`}
            onClick={handleOpenFile}  >
-                change pfp
+                Зураг солих
               </button>
               <button
                 className="w-[45%]  bg-neutral-700 text-white hover:bg-zinc-600 py-2 my-2 rounded-lg font-semibold"
               onClick={handleRemovePfp}>
-                Remove pfp
+                Зураг устгах
               </button>
               </div>
                   <FormControl className="hidden">
@@ -153,9 +153,9 @@ setIsLoading(true)
               </Stack>
               </FormControl>
             <FormControl>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Нэр</FormLabel>
               <Input
-                placeholder="John Doe"
+                placeholder="Батбаяр"
                 _placeholder={{ color: "gray.500" }}
                 type="text"
                 {...register("name")}
@@ -163,9 +163,9 @@ setIsLoading(true)
               />
             </FormControl>
             <FormControl>
-              <FormLabel>User name</FormLabel>
+              <FormLabel>Хэрэглэгчийн нэр</FormLabel>
               <Input
-                placeholder="johndoe"
+                placeholder="batbayar"
                 _placeholder={{ color: "gray.500" }}
                 type="text"
                 {...register("username")}
@@ -173,9 +173,9 @@ setIsLoading(true)
               />
             </FormControl>
             <FormControl>
-              <FormLabel>Email address</FormLabel>
+              <FormLabel>Имэйл хаяг</FormLabel>
               <Input
-                placeholder="your-email@example.com"
+                placeholder="таны-имэйл@example.com"
                 _placeholder={{ color: "gray.500" }}
                 type="email"
                 {...register("email")}
@@ -183,9 +183,9 @@ setIsLoading(true)
               />
             </FormControl>
             <FormControl>
-              <FormLabel>Bio</FormLabel>
+              <FormLabel>Танилцуулга</FormLabel>
               <Input
-                placeholder="Your bio."
+                placeholder="Танилцуулга бичнэ үү."
                 _placeholder={{ color: "gray.500" }}
                 type="text"
                 {...register("bio")}
@@ -193,9 +193,9 @@ setIsLoading(true)
               />
             </FormControl>
             <FormControl>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Нууц үг</FormLabel>
               <Input
-                placeholder="input old or new password"
+                placeholder="хуучин эсвэл шинэ нууц үг"
                 _placeholder={{ color: "gray.500" }}
                 type="password"
                 {...register("password")}
@@ -208,21 +208,21 @@ setIsLoading(true)
                   navigate(`/user/${userid}`);
                 }}
               >
-                Cancel
+                Цуцлах
               </button>
 {
   isLoading ? <Button
   isLoading
-  loadingText="Saving"
+  loadingText="Хадгалж байна..."
   spinnerPlacement="start"
   className="w-full bg-white text-black hover:bg-slate-200 py-2 my-2 rounded-lg font-semibold"
 >
-Save
+Хадгалах
 </Button> :<button
                 className={`w-full py-2 my-2 rounded-lg font-semibold  ${colorMode == 'dark' ? 'bg-white text-black hover:bg-neutral-300' : 'bg-neutral-900 text-white hover:bg-zinc-800'}`}
                 type="submit"
               >
-                Save
+                Хадгалах
               </button>
 }
 

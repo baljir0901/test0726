@@ -1,4 +1,4 @@
-import {React, useState }from 'react'
+import { useState }from 'react'
 import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {FormControl, FormLabel,Input,InputGroup,InputRightElement, Stack,Button, useColorModeValue, useToast} from '@chakra-ui/react'
@@ -12,8 +12,8 @@ const Loginform = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading]= useState(false)
     const Schema=yup.object().shape({
-      username:yup.string().required(),
-      password:yup.string().required()
+      username:yup.string().required('Хэрэглэгчийн нэр шаардлагатай'),
+      password:yup.string().required('Нууц үг шаардлагатай')
     })
     const {register, handleSubmit, formState:{errors}}=useForm({
       resolver:yupResolver(Schema)
@@ -31,7 +31,7 @@ try {
   })
   localStorage.setItem('currUser', JSON.stringify(response.data))
   toast({
-    description:`Welcome back ${response.data.name}`,
+    description:`Тавтай морил ${response.data.name}`,
     status:'success',
     duration:3000,
     isClosable:true
@@ -54,12 +54,12 @@ finally{
     <>
 <FormControl isRequired>
     
-       <FormLabel>UserName</FormLabel>
+       <FormLabel>Хэрэглэгчийн нэр</FormLabel>
        <Input type="text" {...register("username")} />
        <p>{errors.username?.message}</p>
      </FormControl>
  <FormControl id="password" isRequired>
-   <FormLabel>Password</FormLabel>
+   <FormLabel>Нууц үг</FormLabel>
    <InputGroup>
      <Input type={showPassword ? 'text' : 'password'}  {...register("password")} width={'25rem'}/>
      <InputRightElement h={'full'}>
@@ -76,11 +76,11 @@ finally{
    {
   isLoading ?    <Button
       isLoading
-      loadingText="Loging In"
+      loadingText="Нэвтэрч байна..."
       spinnerPlacement="start"
       size="lg"
     >
-    Login
+    Нэвтрэх
     </Button> :    <Button
           type="submit"
           loadingText="Submitting"
@@ -92,7 +92,7 @@ finally{
           }}
           onClick={handleSubmit(onsubmit)}
         >
-          Login
+          Нэвтрэх
         </Button>
 }
 

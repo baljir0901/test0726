@@ -44,7 +44,7 @@ const CreateThread = ({ pfp, id }) => {
   }, [id]);
 
   const Schema = yup.object().shape({
-    posttext: yup.string().max(500).required("Please add content for a thread"),
+    posttext: yup.string().max(500).required("Бодлын агуулга нэмнэ үү"),
   });
 
   const {
@@ -103,7 +103,7 @@ const CreateThread = ({ pfp, id }) => {
           </Link>
           <input
             type="text"
-            placeholder="What is happening!?"
+            placeholder="Юу бодож байна вэ?"
             className="pl-4 outline-none focus:none text-lg w-full bg-transparent"
             {...register("posttext")}
           />
@@ -156,12 +156,12 @@ const CreateThread = ({ pfp, id }) => {
           {isLoading ? (
             <Button
               isLoading
-              loadingText="Posting"
+              loadingText="Нийтэлж байна..."
               spinnerPlacement="start"
               borderRadius="full"
               className="py-2 px-8 font-semibold ml-2 my-4"
             >
-              Post
+              Нийтлэх
             </Button>
           ) : (
             <button
@@ -172,7 +172,7 @@ const CreateThread = ({ pfp, id }) => {
               } py-2 px-8 font-semibold  rounded-full ml-2 my-4 hover:scale-95 transition-all`}
               type="submit"
             >
-              Post
+              Нийтлэх
             </button>
           )}
         </div>

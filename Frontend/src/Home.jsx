@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CreateThread from './components/CreateThread';
 import Userpost from './components/Userpost';
 import Header from './components/Header';
+import PortalTest from './components/PortalTest';
 const Home = () => {
 
   const [user, setUser] = useState(null);
@@ -24,6 +25,7 @@ const Home = () => {
   return (
     <>
      <Header/>
+     <PortalTest />
       {user && <CreateThread pfp={user?.pfp} id={user?.id}/>}
       <Userpost  currUser={user}/>
     </>

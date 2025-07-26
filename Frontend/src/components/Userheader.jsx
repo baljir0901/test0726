@@ -76,7 +76,7 @@ const Userheader = ({ user, currUser }) => {
                     : "cursor-pointer text-xs ml-2 bg-neutral-400 rounded-lg px-1 flex items-center justify-center"
                 }
               >
-                threads.net
+                bodol.space
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ const Userheader = ({ user, currUser }) => {
         <div className="flex">
           <div className="left flex w-11/12 gap-2 items-center justify-start">
             <div className="followersCount font-normal hover:underline text-zinc-500 cursor-pointer">
-              {user?.followers.length} followers
+              {user?.followers.length} дагагч
             </div>
             <div className="instalink font-normal hover:underline text-zinc-500 cursor-pointer lg:block md:block sm:hidden">
              . instagram.com
@@ -178,9 +178,9 @@ const Userheader = ({ user, currUser }) => {
           >
             {" "}
             {togle ? (
-              <button onClick={handleTogle}>Threads</button>
+              <button onClick={handleTogle}>Бодлууд</button>
             ) : (
-              "Threads"
+              "Бодлууд"
             )}{" "}
           </div>
           <div
@@ -193,9 +193,9 @@ const Userheader = ({ user, currUser }) => {
             } `}
           >
             {!togle ? (
-              <button onClick={handleTogle}>Replies</button>
+              <button onClick={handleTogle}>Хариулт</button>
             ) : (
-              "Replies"
+              "Хариулт"
             )}
           </div>
         </div>

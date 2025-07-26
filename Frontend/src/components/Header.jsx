@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useColorMode } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { GoHome } from "react-icons/go";
@@ -8,7 +8,7 @@ import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { GoPerson } from "react-icons/go";
 import {useNavigate} from 'react-router-dom'
-import { SiThreads } from "react-icons/si";
+import ThoughtBubbleIcon from './ThoughtBubbleIcon';
 
 
 const Header = () => {
@@ -75,7 +75,7 @@ const Header = () => {
             </Link>
 
             <div className="px-4 sm:px-8 md:px-10 lg:px-10 xl:px-16 cursor-pointer" onClick={toggleColorMode}>
-              <SiThreads size={32}/>
+              <ThoughtBubbleIcon size={32} color={colorMode === "dark" ? "#ffffff" : "#000000"} />
             </div>
             
             <Link to={`/user/${user?.id}`}>
